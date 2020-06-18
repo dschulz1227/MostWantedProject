@@ -43,7 +43,7 @@ function mainMenu(person, people){
         return (firstName == el.firstName && lastName == el.lastName)
     })
     if (newData.length > 0) {
-        console.log(newData[0].eyeColor);
+        console.log(newData[0].id);
     }
 }
 
