@@ -13,7 +13,7 @@ function app(people){
       searchResults = searchByName(people);
       break;
     case 'no':
-      // TODO: search by traits
+      // TODO: search by traits Damon
       break;
       default:
     app(people); // restart app
@@ -38,16 +38,16 @@ function mainMenu(person, people){
 
   switch(displayOption){
     case "info":
-    // TODO: get person's info
+    // TODO: get person's info Lars is doing this
     break;
     case "family":
-    // TODO: get person's family
+    // TODO: get person's family and this
     break;
     case "descendants":
-    // TODO: get person's descendants
+    // TODO: get person's descendants and this
     break;
     case "restart":
-    app(people); // restart
+    app(people); // restart and this
     break;
     case "quit":
     return; // stop execution
@@ -68,7 +68,7 @@ function searchByName(people){
       return false;
     }
   })
-  // TODO: find the person using the name they entered
+  // TODO: find the person using the name they entered  Michael is doing this.
   return foundPerson;
 }
 
