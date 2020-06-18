@@ -25,6 +25,15 @@ function app(people){
   mainMenu(searchResults, people);
 }
 
+function infoLookUpTool(firstName, lastName) {
+  let newData = data.filter(function (el) {
+      return (firstName == el.firstName && lastName == el.lastName)
+  })
+  if (newData.length > 0) {
+      console.log(newData[0].id);
+  }
+}
+
 // Menu function to call once you find who you are looking for
 function mainMenu(person, people){
 
@@ -36,16 +45,6 @@ function mainMenu(person, people){
   }
 
   let displayOption = prompt("Found " + person.firstName + " " + person.lastName + " . Do you want to know their 'info', 'family', or 'descendants'? Type the option you want or 'restart' or 'quit'");
-
-  
-  function infoLookUpTool(firstName, lastName) {
-    let newData = data.filter(function (el) {
-        return (firstName == el.firstName && lastName == el.lastName)
-    })
-    if (newData.length > 0) {
-        console.log(newData[0].id);
-    }
-}
 
   switch(displayOption){
     case "info":
@@ -80,7 +79,7 @@ function searchByName(people){
     }
   })
   // TODO: find the person using the name they entered  Michael is doing this.
-  return foundPerson;
+  return foundPerson[0];
 }
 
 // alerts a list of people
