@@ -25,12 +25,14 @@ function app(people){
   mainMenu(searchResults, people);
 }
 
-function infoLookUpTool(firstName, lastName) {
+function infoLookUpTool(bringitin) {
   let newData = data.filter(function (el) {
-      return (firstName == el.firstName && lastName == el.lastName)
   })
   if (newData.length > 0) {
       console.log(newData[0].id);
+      console.log(newData[0].dob);
+      console.log(newData[0].occupation);
+      console.log(newData[0].currentSpouse);
   }
 }
 
@@ -48,7 +50,7 @@ function mainMenu(person, people){
 
   switch(displayOption){
     case "info":
-    // TODO: get person's info Lars is doing this
+    infoLookUpTool(foundPerson);
     break;
     case "family":
     // TODO: get person's family and this
