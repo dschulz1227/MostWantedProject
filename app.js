@@ -37,6 +37,16 @@ function mainMenu(person, people){
 
   let displayOption = prompt("Found " + person.firstName + " " + person.lastName + " . Do you want to know their 'info', 'family', or 'descendants'? Type the option you want or 'restart' or 'quit'");
 
+  
+  function infoLookUpTool(firstName, lastName) {
+    let newData = data.filter(function (el) {
+        return (firstName == el.firstName && lastName == el.lastName)
+    })
+    if (newData.length > 0) {
+        console.log(newData[0].eyeColor);
+    }
+}
+
   switch(displayOption){
     case "info":
     // TODO: get person's info Lars is doing this
