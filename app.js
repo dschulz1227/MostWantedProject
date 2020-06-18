@@ -61,7 +61,7 @@ function searchByName(people){
   let firstName = promptFor("What is the person's first name?", chars);
   let lastName = promptFor("What is the person's last name?", chars);
 
-  let foundPerson = people.filter(function(person){
+  let foundPerson = people.filter(function(firstName,lastName){
     if(person.firstName === firstName && person.lastName === lastName){
       return true;
     }
