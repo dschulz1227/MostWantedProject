@@ -12,17 +12,10 @@ function app(people) {
   switch (searchType) {
     case 'yes':
       searchResults = searchByName(people);
-      break;
-    case 'no':
-<<<<<<< HEAD
-
-        searchResults = searchByTraits(people);
-        break;
-=======
+      break;     
     case 'no':
       searchResults = searchByTraits(people);
       break;
->>>>>>> 08f7515c5228795293a2a2416db8ad0e09ab4969
       // TODO: search by traits Damon
       break;
     default:
@@ -35,7 +28,7 @@ function app(people) {
 }
 
 function infoLookUpTool(el) {
-  let newData = data.filter(function (el) {
+  let newData = el.filter(function (el) {
     //return (firstName == el.firstName && lastName == el.lastName)
   })
   if (newData.length > 0) {
@@ -129,19 +122,11 @@ function chars(input) {
 }
 
 
-<<<<<<< HEAD
-function searchByWeight(people){
-  let weight = promptFor("What is the person's weight?", chars);
-  
-  let foundByWeight = people.filter(function(person){
-    if(person.weight == weight){
-=======
 function searchByWeight(weight) {
   let theirWeight = promptFor("What is the person's weight?", chars);
 
   let foundByWeight = weight.filter(function (person) {
     if (person.weight === person.weight) {
->>>>>>> 08f7515c5228795293a2a2416db8ad0e09ab4969
       return true;
     }
     else {
@@ -153,7 +138,7 @@ function searchByWeight(weight) {
 }
 
 function searchByHeight(height) {
-  let height = promptFor("What is the person's height?", chars);
+    height = promptFor("What is the person's height?", chars);
 
   let foundByHeight = height.filter(function (person) {
     if (person.height === person.height) {
@@ -169,7 +154,7 @@ function searchByHeight(height) {
 }
 
 function searchByEyeColor(eyecolor) {
-  let eyecolor = promptFor("What is the person's eye color?", chars);
+    eyecolor = promptFor("What is the person's eye color?", chars);
 
   let foundByEyeColor = eyecolor.filter(function (person) {
     if (person.eyecolor === person.eyecolor) {
@@ -185,22 +170,18 @@ function searchByEyeColor(eyecolor) {
 }
 
 
-
-function searchByTraits(people){
-    let yourChoice = prompt("What trait would you like to search by?");
-
-
-      if (yourChoice =="weight"){
-          searchByWeight(people)
-          return weight;
-      }
-      else if (yourChoice == "height"){
-          searchByHeight("height")
-          return height;
-      }
-      else if(yourChoice == "eyecolor"){
-          searchByEyeColor("eyecolor")
-          return eyecolor;
-      }
-
+function searchByTraits() {
+     yourChoice = prompt("What trait would you like to search by?");
+  if (yourChoice == weight) {
+    searchByWeight
+    return weight;
+  }
+  else if (yourChoice == height) {
+    searchByHeight(height)
+    return height;
+  }
+  else if (yourChoice == eyecolor) {
+    searchByEyeColor(eyecolor)
+    return eyecolor;
+  }
 }
