@@ -12,12 +12,12 @@ function app(people) {
   switch (searchType) {
     case 'yes':
       searchResults = searchByName(people);
-      break;     
+      break;
     case 'no':
-      searchResults = searchByTraits(people);
-      break;
+        searchResults = searchByTraits(people);
+        break;
       // TODO: search by traits Damon
-      break;
+     
     default:
       app(people); // restart app
       break;
@@ -122,11 +122,13 @@ function chars(input) {
 }
 
 
-function searchByWeight(weight) {
-  let theirWeight = promptFor("What is the person's weight?", chars);
 
-  let foundByWeight = weight.filter(function (person) {
-    if (person.weight === person.weight) {
+function searchByWeight(people){
+  let weight = promptFor("What is the person's weight?", chars);
+  
+  let foundByWeight = people.filter(function(person){
+    if(person.weight == weight){
+
       return true;
     }
     else {
