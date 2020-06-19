@@ -14,6 +14,9 @@ function app(people){
       searchResults = searchByName(people);
       break;
     case 'no':
+      case 'no':
+        searchResults = searchByTraits(people);
+        break;
       // TODO: search by traits Damon
       break;
       default:
@@ -117,4 +120,69 @@ function yesNo(input){
 // helper function to pass in as default promptFor validation
 function chars(input){
   return true; // default validation only
+}
+
+
+function searchByWeight(weight){
+  let theirWeight = promptFor("What is the person's weight?", chars);
+  
+  let foundByWeight = weight.filter(function(person){
+    if(person.weight === person.weight){
+      return true;
+    }
+    else{
+      return false;
+    }
+  })
+  // TODO: find the person using the name they entered  Michael is doing this.
+  return foundByWeight;
+}
+
+function searchByHeight(height){
+  let height = promptFor("What is the person's height?", chars);
+  
+  let foundByHeight = height.filter(function(person){
+    if(person.height === person.height){
+      return true;
+    }
+    else{
+      return false;
+    }
+  })
+  // TODO: find the person using the name they entered  Michael is doing this.
+  return foundByHeight;
+
+}
+
+function searchByEyeColor(eyecolor){
+  let eyecolor = promptFor("What is the person's eye color?", chars);
+  
+  let foundByEyeColor = eyecolor.filter(function(person){
+    if(person.eyecolor === person.eyecolor){
+      return true;
+    }
+    else{
+      return false;
+    }
+  })
+  // TODO: find the person using the name they entered  Michael is doing this.
+  return foundByEyeColor;
+
+}
+
+
+function searchByTraits(){
+    let yourChoice = prompt("What trait would you like to search by?");
+      if (yourChoice ==weight){
+          searchByWeight
+          return weight;
+      }
+      else if (yourChoice == height){
+          searchByHeight(height)
+          return height;
+      }
+      else if(yourChoice == eyecolor){
+          searchByEyeColor(eyecolor)
+          return eyecolor;
+      }
 }
