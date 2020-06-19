@@ -118,8 +118,8 @@ function chars(input) {
   return true; // default validation only
 }
 
-
-function searchByWeight(peopleArray) {
+//search by weight function
+function searchByWeight(peopleArray) {            
   let weight = promptFor("What is the person's weight?", chars);
   let foundByWeight = peopleArray.filter(function (person) {              //person's trait must match trait entered in prompt
     if (person.weight == weight) {
@@ -131,7 +131,7 @@ function searchByWeight(peopleArray) {
   })
   return foundByWeight;
 }
-
+//search by height function
 function searchByHeight(peopleArray) {
   let height = promptFor("What is the person's height?", chars);
   let foundByHeight = peopleArray.filter(function (person) {
@@ -144,7 +144,7 @@ function searchByHeight(peopleArray) {
   })
   return foundByHeight;
 }
-
+//search by eye color function
 function searchByEyeColor(peopleArray) {
   let eyecolor = promptFor("What is the person's eye color?", chars);
   let foundByEyeColor = peopleArray.filter(function (person) {
@@ -157,7 +157,7 @@ function searchByEyeColor(peopleArray) {
   })
   return foundByEyeColor;
 }
-
+//search by gender function
 function searchByGender(peopleArray) {
   let gender = promptFor("What is the person's gender?", chars);
   let foundByGender =  peopleArray.filter(function (person) {
@@ -174,7 +174,7 @@ function searchByGender(peopleArray) {
 //**if you filter down to only one person, they will hold index 0 of people array**
 //create for loop for more 
 
-
+//search by all traits function
 function searchByTraits(peopleArray) {
   let yourChoice = prompt("What trait would you like to search by?");         //choose where to start
   let askAgain = false;       //ask again = false when there are no more options
