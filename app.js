@@ -14,17 +14,10 @@ function app(people) {
       searchResults = searchByName(people);
       break;
     case 'no':
-<<<<<<< HEAD
-
         searchResults = searchByTraits(people);
         break;
-=======
-    case 'no':
-      searchResults = searchByTraits(people);
-      break;
->>>>>>> 08f7515c5228795293a2a2416db8ad0e09ab4969
       // TODO: search by traits Damon
-      break;
+     
     default:
       app(people); // restart app
       break;
@@ -129,19 +122,13 @@ function chars(input) {
 }
 
 
-<<<<<<< HEAD
+
 function searchByWeight(people){
   let weight = promptFor("What is the person's weight?", chars);
   
   let foundByWeight = people.filter(function(person){
     if(person.weight == weight){
-=======
-function searchByWeight(weight) {
-  let theirWeight = promptFor("What is the person's weight?", chars);
 
-  let foundByWeight = weight.filter(function (person) {
-    if (person.weight === person.weight) {
->>>>>>> 08f7515c5228795293a2a2416db8ad0e09ab4969
       return true;
     }
     else {
@@ -195,11 +182,11 @@ function searchByTraits(people){
           return weight;
       }
       else if (yourChoice == "height"){
-          searchByHeight("height")
+          searchByHeight(people)
           return height;
       }
       else if(yourChoice == "eyecolor"){
-          searchByEyeColor("eyecolor")
+          searchByEyeColor(people)
           return eyecolor;
       }
 
