@@ -14,17 +14,15 @@ function app(peopleArray) {
       searchResults = searchByName(peopleArray);
       break;
     case 'no':
-      searchResults = searchByTraits(peopleArray);
+      searchResults = searchByTraits(peopleArray);   //closed gap after break where old comment with task was, may need to add more search types
       break;
-    // TODO: search by traits Damon
-
     default:
       app(peopleArray); // restart app
       break;
   }
 
   // Call the mainMenu function ONLY after you find the SINGLE person you are looking for
-  mainMenu(searchResults, peopleArray);
+  mainMenu(searchResults, peopleArray); //results are passed with array to be able to find more information of object
 }
 
 function infoLookUpTool(el) {
@@ -74,9 +72,6 @@ function mainMenu(person, peopleArray) {
 function searchByName(peopleArray) {
   let firstName = promptFor("What is the person's first name?", chars);
   let lastName = promptFor("What is the person's last name?", chars);
-  console.log(peopleArray instanceof String)
-
-
   let foundPerson = peopleArray.filter(function (person) {
     if (person.firstName === firstName && person.lastName === lastName) {
       return true;
@@ -126,7 +121,7 @@ function chars(input) {
 
 function searchByWeight(peopleArray) {
   let weight = promptFor("What is the person's weight?", chars);
-  let foundByWeight = peopleArray.filter(function (person) {
+  let foundByWeight = peopleArray.filter(function (person) {              //person's trait must match trait entered in prompt
     if (person.weight == weight) {
       return true;
     }
@@ -136,6 +131,7 @@ function searchByWeight(peopleArray) {
   })
   return foundByWeight;
 }
+
 function searchByHeight(peopleArray) {
   let height = promptFor("What is the person's height?", chars);
   let foundByHeight = peopleArray.filter(function (person) {
@@ -148,6 +144,7 @@ function searchByHeight(peopleArray) {
   })
   return foundByHeight;
 }
+
 function searchByEyeColor(peopleArray) {
   let eyecolor = promptFor("What is the person's eye color?", chars);
   let foundByEyeColor = peopleArray.filter(function (person) {
@@ -179,14 +176,14 @@ function searchByGender(peopleArray) {
 
 
 function searchByTraits(peopleArray) {
-  let yourChoice = prompt("What trait would you like to search by?");
-  let askAgain = false;
-  let arr = peopleArray;
-  while (arr.length > 1) {
+  let yourChoice = prompt("What trait would you like to search by?");         //choose where to start
+  let askAgain = false;       //ask again = false when there are no more options
+  let arr = peopleArray;       //arr takes spot of peopleArray after each loop with new "array" of names that match search
+  while (arr.length > 1) {    //loop continues until only one name left on array
     if (askAgain == true) {
-      yourChoice = prompt(arr.length + " Matches Found! What trait would you like to search by for these cases?");
+      yourChoice = prompt(arr.length + " Matches Found! What trait would you like to search by for these cases?");   //tells how many search matches were found-what trait to search next
     }
-    askAgain = true;
+    askAgain = true;        //prompts what trait to search for
     if (yourChoice == "weight") {
       arr = searchByWeight(arr); 
     } else if (yourChoice == "height") {
@@ -197,5 +194,5 @@ function searchByTraits(peopleArray) {
       arr = searchByGender(arr);   
     }
   }
-  return arr[0];
+  return arr[0];    //returns index 0 of array holding our final search result to our app function
 }
