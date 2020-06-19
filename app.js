@@ -28,14 +28,15 @@ function app(people){
   mainMenu(searchResults, people);
 }
 
-function infoLookUpTool(bringitin) {
+function infoLookUpTool(elementOne,elementTwo) {
   let newData = data.filter(function (el) {
+      //return (firstName == el.firstName && lastName == el.lastName)
   })
   if (newData.length > 0) {
       console.log(newData[0].id);
       console.log(newData[0].dob);
-      console.log(newData[0].occupation);
-      console.log(newData[0].currentSpouse);
+      // console.log(newData[0].id);
+      // console.log(newData[0].id);
   }
 }
 
@@ -53,7 +54,7 @@ function mainMenu(person, people){
 
   switch(displayOption){
     case "info":
-    infoLookUpTool(foundPerson);
+    infoLookUpTool(firstName,lastName);
     break;
     case "family":
     // TODO: get person's family and this
