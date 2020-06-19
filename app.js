@@ -25,7 +25,7 @@ function app(people){
   mainMenu(searchResults, people);
 }
 
-function infoLookUpTool(elementOne,elementTwo) {
+function infoLookUpTool(el) {
   let newData = data.filter(function (el) {
       //return (firstName == el.firstName && lastName == el.lastName)
   })
@@ -51,7 +51,7 @@ function mainMenu(person, people){
 
   switch(displayOption){
     case "info":
-    infoLookUpTool(firstName,lastName);
+    infoLookUpTool(searchResults);
     break;
     case "family":
     // TODO: get person's family and this
