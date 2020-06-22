@@ -26,20 +26,20 @@ function app(peopleArray) {
 //   // Call the mainMenu function ONLY after you find the SINGLE person you are looking for
 //   mainMenu(searchResults, peopleArray); //results are passed with array to be able to find more information of object
 // }
-function getValue(value, property){
-  let result = data.filter(function(obj){
-    return obj[property] == value;
-    console.log(result);
-    
-  }
-  )
-  }
 
-
-
-
-
-
+function infoLookUpTool(person) {
+  console.log(person.firstName)
+  console.log(person.lastName)
+  console.log("ID Number: " + person.id)
+  console.log(person.gender)
+  console.log(person.dob)
+  console.log(person.height)
+  console.log(person.weight)
+  console.log(person.eyeColor)
+  console.log(person.occupation)
+  console.log(person.parents[0], person.parents[1])
+  console.log(person.currentSpouse)
+}
 // // Menu function to call once you find who you are looking for
 function mainMenu(person, peopleArray) {
 
@@ -54,7 +54,7 @@ function mainMenu(person, peopleArray) {
 
   switch (displayOption) {
     case "info":
-      getValue(person,"id");
+      infoLookUpTool(person);
       break;
     case "family":
       // TODO: get person's family and this
