@@ -1,9 +1,9 @@
 "use strict"
-// lets make sure im linked, Lars typed here
-// mike is here 
-/*
-Build all of your functions for displaying and gathering information below (GUI).
-*/
+// '// lets make sure im linked, Lars typed here
+// // mike is here 
+// /*
+// Build all of your functions for displaying and gathering information below (GUI).
+
 
 // app is the function called to start the entire application
 function app(peopleArray) {
@@ -21,9 +21,9 @@ function app(peopleArray) {
       break;
   }
 
-  // Call the mainMenu function ONLY after you find the SINGLE person you are looking for
-  mainMenu(searchResults, peopleArray); //results are passed with array to be able to find more information of object
-}
+//   // Call the mainMenu function ONLY after you find the SINGLE person you are looking for
+//   mainMenu(searchResults, peopleArray); //results are passed with array to be able to find more information of object
+// }
 
 function infoLookUpTool(el) {
   let newData = data.filter(function (el) {
@@ -37,10 +37,10 @@ function infoLookUpTool(el) {
   }
 }
 
-// Menu function to call once you find who you are looking for
+// // Menu function to call once you find who you are looking for
 function mainMenu(person, peopleArray) {
 
-  /* Here we pass in the entire person object that we found in our search, as well as the entire original dataset of peopleArray. We need peopleArray in order to find descendants and other information that the user may want. */
+//   /* Here we pass in the entire person object that we found in our search, as well as the entire original dataset of peopleArray. We need peopleArray in order to find descendants and other information that the user may want. */
 
   if (!person) {
     alert("Could not find that individual.");
@@ -69,7 +69,7 @@ function mainMenu(person, peopleArray) {
   }
 }
 
-function searchByName(peopleArray) {
+// function searchByName(peopleArray) {
   let firstName = promptFor("What is the person's first name?", chars);
   let lastName = promptFor("What is the person's last name?", chars);
   let foundPerson = peopleArray.filter(function (person) {
@@ -100,7 +100,7 @@ function displayPerson(person) {
   alert(personInfo);
 }
 
-// function that prompts and validates user input
+// // function that prompts and validates user input
 function promptFor(question, valid) {
   do {
     var response = prompt(question).trim();
@@ -108,12 +108,12 @@ function promptFor(question, valid) {
   return response;
 }
 
-// helper function to pass into promptFor to validate yes/no answers
+// // helper function to pass into promptFor to validate yes/no answers
 function yesNo(input) {
   return input.toLowerCase() == "yes" || input.toLowerCase() == "no";
 }
 
-// helper function to pass in as default promptFor validation
+// // helper function to pass in as default promptFor validation
 function chars(input) {
   return true; // default validation only
 }
@@ -171,12 +171,12 @@ function searchByGender(peopleArray) {
   return foundByGender;
 }
 
-//**if you filter down to only one person, they will hold index 0 of people array**
-//create for loop for more 
+// //**if you filter down to only one person, they will hold index 0 of people array**
+// //create for loop for more 
 
 //search by all traits function
 function searchByTraits(peopleArray) {
-  let yourChoice = prompt("What trait would you like to search by?");         //choose where to start
+  let yourChoice = prompt("What trait would you like to search by?","eyecolor, weight, height, or gender");         //choose where to start
   let askAgain = false;       //ask again = false when there are no more options
   let arr = peopleArray;       //arr takes spot of peopleArray after each loop with new "array" of names that match search
   while (arr.length > 1) {    //loop continues until only one name left on array
@@ -196,3 +196,8 @@ function searchByTraits(peopleArray) {
   }
   return arr[0];    //returns index 0 of array holding our final search result to our app function
 }
+
+
+
+
+
