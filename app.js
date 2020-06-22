@@ -12,9 +12,11 @@ function app(peopleArray) {
   switch (searchType) {
     case 'yes':
       searchResults = searchByName(peopleArray);
+      mainMenu(searchResults, peopleArray);
       break;
     case 'no':
       searchResults = searchByTraits(peopleArray);   //closed gap after break where old comment with task was, may need to add more search types
+      mainMenu(searchResults, peopleArray);
       break;
     default:
       app(peopleArray); // restart app
@@ -193,6 +195,10 @@ function searchByTraits(peopleArray) {
     } else if (yourChoice == "gender") {
       arr = searchByGender(arr);   
     }
+  }
+  if(arr.length ==0){
+    alert("No match found")
+    return app(peopleArray)
   }
   return arr[0];    //returns index 0 of array holding our final search result to our app function
 }
