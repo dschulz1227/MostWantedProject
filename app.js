@@ -53,7 +53,7 @@ function mainMenu(person, peopleArray) {
 
   switch (displayOption) {
     case "info":
-      infoLookUpTool(searchResults);
+      infoLookUpTool(person);
       break;
     case "family":
       // TODO: get person's family and this
@@ -186,13 +186,13 @@ function searchByTraits(peopleArray) {
       yourChoice = prompt(arr.length + " Matches Found! What trait would you like to search by for these cases?");   //tells how many search matches were found-what trait to search next
     }
     askAgain = true;        //prompts what trait to search for
-    if (yourChoice == "weight") {
+    if (yourChoice == "weight" || "Weight") {
       arr = searchByWeight(arr); 
-    } else if (yourChoice == "height") {
+    } else if (yourChoice == "height" || "Height") {
       arr = searchByHeight(arr);
-    } else if (yourChoice == "eyecolor") {
+    } else if (yourChoice == "eyecolor" || "eye color" || "Eye color" || "Eye Color") {
       arr = searchByEyeColor(arr);     
-    } else if (yourChoice == "gender") {
+    } else if (yourChoice == "gender" || "Gender") {
       arr = searchByGender(arr);   
     }
   }
