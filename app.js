@@ -26,18 +26,19 @@ function app(peopleArray) {
 //   // Call the mainMenu function ONLY after you find the SINGLE person you are looking for
 //   mainMenu(searchResults, peopleArray); //results are passed with array to be able to find more information of object
 // }
-
-function infoLookUpTool(el) {
-  let newData = data.filter(function (el) {
-    //return (firstName == el.firstName && lastName == el.lastName)
-  })
-  if (newData.length > 0) {
-    console.log(newData[0].id);
-    console.log(newData[0].dob);
-    // console.log(newData[0].id);
-    // console.log(newData[0].id);
+function getValue(value, property){
+  let result = data.filter(function(obj){
+    return obj[property] == value;
+    console.log(result);
+    
   }
-}
+  )
+  }
+
+
+
+
+
 
 // // Menu function to call once you find who you are looking for
 function mainMenu(person, peopleArray) {
@@ -53,7 +54,7 @@ function mainMenu(person, peopleArray) {
 
   switch (displayOption) {
     case "info":
-      infoLookUpTool(person);
+      getValue(person,"id");
       break;
     case "family":
       // TODO: get person's family and this
