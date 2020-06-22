@@ -20,7 +20,7 @@ function app(peopleArray) {
       app(peopleArray); // restart app
       break;
   }
-
+}
 //   // Call the mainMenu function ONLY after you find the SINGLE person you are looking for
 //   mainMenu(searchResults, peopleArray); //results are passed with array to be able to find more information of object
 // }
@@ -69,7 +69,7 @@ function mainMenu(person, peopleArray) {
   }
 }
 
-// function searchByName(peopleArray) {
+function searchByName(peopleArray) {
   let firstName = promptFor("What is the person's first name?", chars);
   let lastName = promptFor("What is the person's last name?", chars);
   let foundPerson = peopleArray.filter(function (person) {
@@ -196,7 +196,6 @@ function searchByTraits(peopleArray) {
   }
   return arr[0];    //returns index 0 of array holding our final search result to our app function
 }
-
 
 
 
