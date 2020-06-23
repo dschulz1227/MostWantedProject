@@ -28,18 +28,19 @@ function app(peopleArray) {
 // }
 
 function infoLookUpTool(person) {
-  console.log(person.firstName)
-  console.log(person.lastName)
-  console.log("ID Number: " + person.id)
-  console.log(person.gender)
-  console.log(person.dob)
-  console.log(person.height)
-  console.log(person.weight)
-  console.log(person.eyeColor)
-  console.log(person.occupation)
-  console.log(person.parents[0], person.parents[1])
-  console.log(person.currentSpouse)
+  console.log("First Name: " + person.firstName);
+  console.log("Last Name: " + person.lastName);
+  console.log("ID Number: " + person.id);
+  console.log("Gender: " + person.gender);
+  console.log("Date of Birth: " + person.dob);
+  console.log("Height: " + person.height);
+  console.log("Weight: " + person.weight);
+  console.log("Eye Color: " + person.eyeColor);
+  console.log("Occupation: " + person.occupation);
+  console.log("Parent 1: " + person.parents[0], "Parent 2: " + person.parents[1]);
+  console.log("Current Spouse: " + person.currentSpouse);
 }
+
 // // Menu function to call once you find who you are looking for
 function mainMenu(person, peopleArray) {
 
