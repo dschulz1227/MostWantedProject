@@ -26,6 +26,9 @@ function app(peopleArray) {
 //   // Call the mainMenu function ONLY after you find the SINGLE person you are looking for
 //   mainMenu(searchResults, peopleArray); //results are passed with array to be able to find more information of object
 // }
+let personsSpouse = 0
+
+
 
 function infoLookUpTool(person) {
   console.log("First Name: " + person.firstName);
@@ -40,6 +43,36 @@ function infoLookUpTool(person) {
   console.log("Parent 1: " + person.parents[0], "Parent 2: " + person.parents[1]);
   console.log("Current Spouse: " + person.currentSpouse);
 }
+
+
+//create function that displays parents, spouse, and descendants
+
+
+//create function that displays JUST descendants
+
+function getSpouse(person){ 
+  if(person.currentSpouse == null){
+    console.log("This person has no spouse.");
+  }
+  else{
+    console.log(person.currentSpouse);
+  }
+}
+
+function getParents(person){
+  
+  if(person.parents.length < 1){
+    console.log("This person has no parents");
+  }
+  else if(person.parents[1]==null){
+    console.log(person.parents[0]);
+      }
+  else{
+    console.log(person.parents[0] , person.parents[1]);
+
+  }
+}
+
 
 // // Menu function to call once you find who you are looking for
 function mainMenu(person, peopleArray) {
@@ -58,9 +91,12 @@ function mainMenu(person, peopleArray) {
       infoLookUpTool(person);
       break;
     case "family":
+      getSpouse(person);
+      getParents(person);
       // TODO: get person's family and this
       break;
     case "descendants":
+      
       // TODO: get person's descendants and this
       break;
     case "restart":
