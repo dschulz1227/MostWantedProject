@@ -30,8 +30,20 @@ function infoLookUpTool(person) {
   console.log("Weight: " + person.weight);
   console.log("Eye Color: " + person.eyeColor);
   console.log("Occupation: " + person.occupation);
-  console.log("Parent 1: " + person.parents[0], "Parent 2: " + person.parents[1]);
-  console.log("Current Spouse: " + person.currentSpouse);
+  if (person.parents[0] == null) {
+    console.log("No Parents found")
+  }
+  else if (person.parents[0] !== null && person.parents[1] == null)
+    console.log("One parent found. Parent:" + person.parents[0])
+  else {
+    console.log("Parent 1: " + person.parents[0], "Parent 2: " + person.parents[1]);
+  }
+  if (person.currentSpouse == null) {
+    console.log("No Spouse found")
+  }
+  else {
+    console.log("Current Spouse: " + person.currentSpouse);
+  }
 }
 
 function getPerson(id, peopleArray){
