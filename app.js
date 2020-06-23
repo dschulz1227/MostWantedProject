@@ -100,20 +100,18 @@ function mainMenu(person, peopleArray) {
     case "family":
       getSpouse(person, peopleArray);
       getParents(person, peopleArray);
-      // TODO: get person's family and this
       break;
     case "descendants":
       let descendants = getDescendants(person,peopleArray);
       console.log(descendants);
-      // TODO: get person's descendants and this
       break;
     case "restart":
-      app(peopleArray); // restart and this
+      app(peopleArray); 
       break;
     case "quit":
-      return; // stop execution
+      return; 
     default:
-      return mainMenu(person, peopleArray); // ask again
+      return mainMenu(person, peopleArray); 
   }
 }
 
@@ -211,30 +209,24 @@ function searchByGender(peopleArray) {
 }
 
 function searchByTraits(peopleArray) {
-  let yourChoice = prompt("What trait would you like to search by?","eyecolor, weight, height, or gender");        
-  let arr = peopleArray;       
-  while (arr.length > 1) {    
+  let yourChoice = prompt("What trait would you like to search by?", "Eye color, weight, height, or gender");
+  let askAgain = false;
+  let arr = peopleArray;
+  while (arr.length > 1) {
     if (askAgain == true) {
-      yourChoice = prompt(arr.length + " Matches Found! What trait would you like to search by for these cases?");   
+      yourChoice = prompt(arr.length + " Matches Found! What trait would you like to search by for these cases?");
     }
-    askAgain = true;      
-    if (yourChoice == "weight" || "Weight") {
+    askAgain = true;
+    if (yourChoice == "weight" ||yourChoice == "Weight") {
       arr = searchByWeight(arr); 
-    } else if (yourChoice == "height" || "Height") {
+    } else if (yourChoice === "height" || yourChoice == "height") {
       arr = searchByHeight(arr);
-    } else if (yourChoice == "eyecolor" || "eye color" || "Eye color" || "Eye Color") {
+    } else if (yourChoice === "eyecolor" ||yourChoice == "eye color" || yourChoice == "Eye Color" || yourChoice =="Eye color") {
       arr = searchByEyeColor(arr);     
-    } else if (yourChoice == "gender" || "Gender") {
+    } else if (yourChoice === "gender" || yourChoice == "Gender") {
       arr = searchByGender(arr);   
     }
   }
-  if(arr.length ==0){
-    alert("No match found")
-    return app(peopleArray)
-  }
-  return arr[0];   
+  return arr[0];
 }
-
-
-
 
