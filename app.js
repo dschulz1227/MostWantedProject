@@ -217,7 +217,7 @@ function searchByTraits(peopleArray) {
     if (askAgain == true) {
       yourChoice = prompt(arr.length + " Matches Found! What trait would you like to search by for these cases?");   
     }
-    askAgain = true;        /
+    askAgain = true;      
     if (yourChoice == "weight" || "Weight") {
       arr = searchByWeight(arr); 
     } else if (yourChoice == "height" || "Height") {
