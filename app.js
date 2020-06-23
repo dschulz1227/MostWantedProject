@@ -103,7 +103,7 @@ function mainMenu(person, peopleArray) {
     return app(peopleArray); 
   }
 
-  let displayOption = prompt("Found " + person.firstName + " " + person.lastName + " . Do you want to know their 'info', 'family', or 'descendants'? Type the option you want or 'restart' or 'quit'");
+  let displayOption = prompt("Found " + person.firstName + " " + person.lastName + "\nDo you want to know their 'info', 'family', or 'descendants'?\nType the option you want or 'restart' or 'quit'");
 
   switch (displayOption) {
     case "info":
