@@ -46,35 +46,45 @@ function infoLookUpTool(person) {
 
 
 //create function that displays parents, spouse, and descendants
-
+function getPerson(id, peopleArray){
+  let person = peopleArray.filter(function(el){
+    if(el.id == id){
+      return true;
+    }else{
+      return false;
+    }
+  });
+  return person[0];
+}
 
 //create function that displays JUST descendants
 
-function getSpouse(person){ 
+function getSpouse(person, peopleArray){ 
   if(person.currentSpouse == null){
     console.log("This person has no spouse.");
   }
   else{
-    console.log(person.currentSpouse);
+    let spouse = getPerson(person.currentSpouse, peopleArray);
+    console.log(`Spouse: ${spouse.firstName} ${spouse.lastName}`);
   }
 }
 
-function getParents(person){
-  
+function getParents(person, peopleArray){
+  let parentOne = getPerson(person.parents[0], peopleArray)
+  let parentTwo = getPerson(person.parents[1], peopleArray)
   if(person.parents.length < 1){
     console.log("This person has no parents");
   }
-  else if(person.parents[1]==null){
-    console.log(person.parents[0]);
-      }
+  else if(person.parents[1]==null){ 
+    console.log(`Parents: ${parentOne.firstName} ${parentOne.lastName}`); 
+  }
   else{
-    console.log(person.parents[0] , person.parents[1]);
-
+    console.log(`Parents: ${parentOne.firstName} ${parentOne.lastName} , ${parentTwo.firstName} ${parentTwo.lastName}`)
   }
 }
 
 
-// // Menu function to call once you find who you are looking for
+// Menu function to call once you find who you are looking for
 function mainMenu(person, peopleArray) {
 
 //   /* Here we pass in the entire person object that we found in our search, as well as the entire original dataset of peopleArray. We need peopleArray in order to find descendants and other information that the user may want. */
@@ -91,8 +101,8 @@ function mainMenu(person, peopleArray) {
       infoLookUpTool(person);
       break;
     case "family":
-      getSpouse(person);
-      getParents(person);
+      getSpouse(person, peopleArray);
+      getParents(person, peopleArray);
       // TODO: get person's family and this
       break;
     case "descendants":
