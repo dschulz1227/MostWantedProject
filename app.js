@@ -83,6 +83,24 @@ function getParents(person, peopleArray){
   }
 }
 
+//create function that collects all ID's that do not belong to person within its object. display info of the owners of the ID's
+
+function getDescendants(person, peopleArray){
+ let children = peopleArray.filter(function(el){
+   if(el.parents.includes(person.id)){
+     return true;
+   }
+   else{
+     return false;
+   }
+ });
+for(let i =0; i < children.length; i++){
+  children.concat(getDescendants(children[i],peopleArray));
+}
+  return children;
+}  
+  
+
 
 // Menu function to call once you find who you are looking for
 function mainMenu(person, peopleArray) {
@@ -106,7 +124,8 @@ function mainMenu(person, peopleArray) {
       // TODO: get person's family and this
       break;
     case "descendants":
-      
+      let descendants = getDescendants(person,peopleArray);
+      console.log(descendants);
       // TODO: get person's descendants and this
       break;
     case "restart":
