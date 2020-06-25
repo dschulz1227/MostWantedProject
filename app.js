@@ -127,9 +127,11 @@ function mainMenu(person, peopleArray) {
   }
 }
 
+//be able to search by name not using correct letter casing
+
 function searchByName(peopleArray) {
   let firstName = promptFor("What is the person's first name?", chars);
-  let lastName = promptFor("What is the person's last name?", chars);
+  let lastName= promptFor("What is the person's last name?", chars);
   let foundPerson = peopleArray.filter(function (person) {
     if (person.firstName === firstName && person.lastName === lastName) {
       return true;
@@ -171,13 +173,14 @@ function chars(input) {
 function searchByWeight(peopleArray) {            
   let weight = promptFor("What is the person's weight?", chars);
   let foundByWeight = peopleArray.filter(function (person) {             
-    if (person.weight == weight) {
+    if (person.weight == weight) {;
       return true;
     }
     else {
       return false;
     }
   })
+  console.log(foundByWeight);
   return foundByWeight;
 }
 
@@ -191,6 +194,7 @@ function searchByHeight(peopleArray) {
       return false;
     }
   })
+  console.log(foundByHeight);
   return foundByHeight;
 }
 
@@ -204,6 +208,7 @@ function searchByEyeColor(peopleArray) {
       return false;
     }
   })
+  console.log(foundByEyeColor);
   return foundByEyeColor;
 }
 
@@ -217,6 +222,12 @@ function searchByGender(peopleArray) {
       return false;
     }
   })
+  console.log(foundByGender);
+  // let userAnswer = prompt("is the person you're looking for in this list?","Yes or No")
+  // if(userAnswer == 'Yes'){
+  //   let enterName = prompt("Enter their name")
+  //   displayPerson(userAnswer);
+  
   return foundByGender;
 }
 
@@ -227,11 +238,12 @@ function searchByTraits(peopleArray) {
   while (arr.length > 1) {
     if (askAgain == true) {
       yourChoice = prompt(arr.length + " Matches Found! What trait would you like to search by for these cases?");
+      
     }
     askAgain = true;
     if (yourChoice == "weight" ||yourChoice == "Weight") {
       arr = searchByWeight(arr); 
-    } else if (yourChoice === "height" || yourChoice == "height") {
+    } else if (yourChoice === "height" || yourChoice == "Height") {
       arr = searchByHeight(arr);
     } else if (yourChoice === "eyecolor" ||yourChoice == "eye color" || yourChoice == "Eye Color" || yourChoice =="Eye color") {
       arr = searchByEyeColor(arr);     
@@ -242,3 +254,7 @@ function searchByTraits(peopleArray) {
   return arr[0];
 }
 
+//print results of each search
+//prompt "Is the person you are looking for in this list"
+//if yes, askagain = false
+//if no, askagain = true
